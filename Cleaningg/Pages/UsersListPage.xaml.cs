@@ -41,7 +41,7 @@ namespace Cleaningg.Pages
             DBConnect.db.User.Load();
             Userss = DBConnect.db.User.Local;
             InitializeComponent();
-            GeneralCount.Text = DBConnect.db.User.Count().ToString();
+            
         }
 
         public void Sort()
@@ -88,7 +88,7 @@ namespace Cleaningg.Pages
             }
             Userss = users;
 
-            FoundCount.Text = users.Count().ToString() + " из ";
+           
         }
         private void AddUserBtn_Click(object sender, RoutedEventArgs e)
         {

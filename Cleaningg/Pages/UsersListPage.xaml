@@ -75,11 +75,10 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
-            <Button x:Name="LeftBtn" Content="&lt;" Margin="5" Click="LeftBtn_Click"  />
+           
             <Button x:Name="AddUserBtn" Content="Добавить" Margin="5" Click="AddUserBtn_Click" />
-            <Button x:Name="RightBtn" Content="&gt;" Margin="5" Click="RightBtn_Click" />
-            <TextBlock x:Name="FoundCount" Margin="5"/>
-            <TextBlock x:Name="GeneralCount" Margin="5"/>
+            
+            
         </StackPanel>
     </Grid>
 </Page>

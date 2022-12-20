@@ -1,0 +1,114 @@
+﻿<Page x:Class="Cleaningg.Pages.OrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cleaningg.Pages"
+      mc:Ignorable="d" 
+      DataContext="{Binding RelativeSource={RelativeSource Self}}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrderPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="360*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <StackPanel  Orientation="Vertical" HorizontalAlignment="Center" MinWidth="322">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"  Orientation="Horizontal" >
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                            <TextBlock Text="Дата" />
+                            <TextBlock x:Name="DateTb" Text="{Binding Order.CompletionDate}" MinWidth="50" Margin="5 0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                            <TextBlock Text="Статус заказа"/>
+                            <ComboBox x:Name="StatusCb" ItemsSource="{Binding OrderStatus}"
+                                      SelectedItem="{Binding Order.OrderStatus}"  Margin="5 0">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <ComboBoxItem Tag="{Binding Title}"
+                                                  Content="{Binding Title}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                            <TextBlock Text="Исполнитель" Margin="5"  />
+
+                            <ComboBox ItemsSource="{Binding Executors}" 
+                                      SelectedItem="{Binding Order.User1.FirstName}" Width="100"/>
+
+
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                            <TextBlock Text="Заказчик" Margin="5"  />
+
+                            <ComboBox ItemsSource="{Binding Customers}"
+                                      SelectedItem="{Binding Order.User.FirstName}" Width="100"/>
+
+
+
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+
+        </StackPanel>
+        <ListView Grid.Row="1" x:Name="ServiceList" d:ItemsSource="{d:SampleData ItemCount=3}" ItemsSource="{Binding OrderServices}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#FFD1EEFC" Padding="3" Margin="3" BorderThickness="2" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="690"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="44"/>
+                                <RowDefinition Height="41"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding Services.Photo}" Grid.RowSpan="2" Height="NaN" Margin="0,4,0,3"/>
+                            <TextBlock Text="{Binding Services.Title}" 
+                                       Grid.Column="1" HorizontalAlignment="Center"/>
+
+                            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Margin="10 0">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Services.Cost, StringFormat=F}" />
+
+
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Text="Цена"/>
+                                    <TextBlock Margin="10 0" x:Name="PPTb" Text="{Binding TotalCost}"/>
+                                    <TextBlock Text="Количество вещей"></TextBlock>
+                                    <TextBox Margin="10 0" x:Name="QuTb" Text="{Binding QuanityThings}" />
+                                </StackPanel>
+
+                            </StackPanel>
+
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="SaveOrderBtn"  Content="Сохранить" Click="SaveOrderBtn_Click"/>
+            <Button x:Name="AddProductInOrderBtn" Content="Добавить" Click="AddProductInOrderBtn_Click"/>
+            <Button x:Name="DeleteProductInOrderBtn" Content="Удалить" Click="DeleteProductInOrderBtn_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,44 @@
+﻿<Page x:Class="Cleaningg.Pages.AllSuppliesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cleaningg.Pages"
+      mc:Ignorable="d" 
+       DataContext="{Binding RelativeSource={RelativeSource Self}}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AllSuppliesPage">
+
+    <Grid>
+        <ListView x:Name="SupplyList" Grid.Row="1"  d:ItemsSource="{d:SampleData ItemCount=3}" ItemsSource="{Binding AllSupply}" Margin="0,0,0,37"  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border  BorderBrush="#FF7400AF" BorderThickness="2" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="173"/>
+                                <ColumnDefinition Width="617"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="69"/>
+                                <RowDefinition Height="46"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Margin="0,0,0,19">
+
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Date}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Grid.Row="1">
+                                <TextBlock  Text="{Binding Supplier.Title, StringFormat='{} Поставщик: {0}'}"/>
+                                <TextBlock  Text="{Binding Detergent.Title, StringFormat='{} Средство: {0}'}"/>
+                                <TextBlock  Text="{Binding Quanity, StringFormat='{} Количество: {0}'}"/>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b2bc1b3d9ded4983a47273e6ee952009" Name="Diagram1">
+        <EntityTypeShape EntityType="DryCleaningModel.Detergent" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.Gender" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.Order" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.OrderService" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.OrderStatus" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.Role" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.Services" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.Supplier" Width="1.5" PointX="6" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.Supply" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DryCleaningModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DryCleaningModel.FK_Services_Detergent" ManuallyRouted="false" />
+        <AssociationConnector Association="DryCleaningModel.FK_Supply_Detergent" ManuallyRouted="false" />
+        <AssociationConnector Association="DryCleaningModel.FK_User_Gender1" ManuallyRouted="false" />
+        <AssociationConnector Association="DryCleaningModel.FK_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="DryCleaningModel.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DryCleaningModel.FK_Order_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="DryCleaningModel.FK_OrderService_Order1" ManuallyRouted="false" />
+        <AssociationConnector Association="DryCleaningModel.FK_OrderService_Services1" ManuallyRouted="false" />
+        <AssociationConnector Association="DryCleaningModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="DryCleaningModel.FK_Supply_Supplier" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

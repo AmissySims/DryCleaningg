@@ -50,6 +50,7 @@
                                         <TextBlock Width="auto" Margin="5">Фамилия</TextBlock>
                                         <TextBlock Width="auto" Margin="5">Имя</TextBlock>
                                         <TextBlock Width="auto" Margin="5">Отчество</TextBlock>
+                                        <TextBlock Width="auto" Margin="5">Пол</TextBlock>
                                         <TextBlock Width="auto" Margin="5">Телефон</TextBlock>
                                         <TextBlock Width="auto" Margin="5">Адрес</TextBlock>
                                     </StackPanel>
@@ -60,6 +61,7 @@
                                         <TextBlock Text="{Binding FirstName}" Width="auto" Margin="5" />
                                         <TextBlock Text="{Binding LastName}" Width="auto" Margin="5" />
                                         <TextBlock Text="{Binding Patronymic}" Width="auto" Margin="5" />
+                                        <TextBlock Text="{Binding Gender.Title}" Width="auto" Margin="5" />
                                         <TextBlock Text="{Binding Phone}" Width="auto" Margin="5" />
                                         <TextBlock Text="{Binding Adress}" Width="auto" Margin="5" />
                                     </StackPanel>

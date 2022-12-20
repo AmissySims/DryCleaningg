@@ -42,13 +42,20 @@
                     <TextBox x:Name="AdressTb" Margin="5" Text="{Binding User.Adress}" Width="100"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Пол" Margin="5"/>
+                    <ComboBox x:Name="GenderCb" Margin="5" Width="100" SelectedIndex="{Binding User.GenderId}"> 
+                        <ComboBoxItem Content="Мужской"/>
+                        <ComboBoxItem Content="Женский"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Роль" Margin="5"/>
-                    <ComboBox x:Name="RolCb" Margin="5" ItemsSource="{Binding Roles}" Width="100" SelectedIndex="{Binding User.RoleId}" SelectionChanged="RolCb_SelectionChanged" >
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <ComboBoxItem Content="{Binding Title}" Tag="{Binding Title}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
+                    <ComboBox x:Name="RolCb" Margin="5"  Width="100" SelectedIndex="{Binding User.RoleId}" SelectionChanged="RolCb_SelectionChanged" >
+                        
+                            <ComboBoxItem Content="Менеджер"/>
+                            <ComboBoxItem Content="Клиент"/>
+                            <ComboBoxItem Content="Работник"/>
+                        
                     </ComboBox>
                 </StackPanel>
                 <Button x:Name="SaveUserBtn" Content="Сохранить" Margin="5" ButtonBase.Click="SaveUserBtn_Click"/>

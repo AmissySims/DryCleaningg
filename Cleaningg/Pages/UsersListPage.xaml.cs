@@ -23,7 +23,7 @@ namespace Cleaningg.Pages
     /// </summary>
     public partial class UsersListPage : Page
     {
-        int actPage = 0;
+        
 
         public ObservableCollection<User> Userss
         {
@@ -47,8 +47,7 @@ namespace Cleaningg.Pages
         public void Sort()
         {
             ObservableCollection<User> users = Userss;
-            if (CountCb == null)
-                return;
+           
             if (FilterCb == null)
                 return;
             if (FilterCb.SelectedItem != null)
@@ -70,24 +69,6 @@ namespace Cleaningg.Pages
                 }
             }
             Userss = users;
-            if (CountCb.SelectedIndex > -1 && users.Count() > 0)
-            {
-                int selCount;
-                if ((CountCb.SelectedItem as ComboBoxItem).Content.ToString() == "Все")
-                    users = DBConnect.db.User.Local;
-                else
-                {
-                    selCount = Convert.ToInt32((CountCb.SelectedItem as ComboBoxItem).Content);
-                    users = new ObservableCollection<User>(users.Skip(selCount * actPage).Take(selCount));
-                    if (users.Count() == 0)
-                    {
-                        actPage--;
-                        Sort();
-                    }
-                }
-            }
-            Userss = users;
-
            
         }
         private void AddUserBtn_Click(object sender, RoutedEventArgs e)
@@ -96,18 +77,7 @@ namespace Cleaningg.Pages
             NavigationService.Navigate(new UserCabPage(seluser));
         }
 
-        private void RightBtn_Click(object sender, RoutedEventArgs e)
-        {
-            actPage++;
-            Sort();
-        }
-
-        private void LeftBtn_Click(object sender, RoutedEventArgs e)
-        {
-            actPage--;
-            if (actPage < 0)
-                return;
-        }
+        
 
         private void UserRedBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -115,11 +85,7 @@ namespace Cleaningg.Pages
             NavigationService.Navigate(new UserCabPage(seluser));
         }
 
-        private void CountCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            actPage = 0;
-            Sort();
-        }
+        
 
         private void FilterCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

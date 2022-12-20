@@ -16,15 +16,7 @@
             <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
-                <TextBlock Text="Кол-во элементов" Margin="5" />
-                <ComboBox x:Name="CountCb" Margin="5" Width="50"  SelectedIndex="0" Height="30" SelectionChanged="CountCb_SelectionChanged" >
-                    <ComboBoxItem  Tag="1" Content="Все"/>
-                    <ComboBoxItem Tag="2" Content="5"/>
-                    <ComboBoxItem Tag="3" Content="10"/>
-                    <ComboBoxItem Tag="4" Content="20"/>
-                </ComboBox>
-            </StackPanel>
+           
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
                 <TextBlock Text="Фильтр" Margin="5" />
                 <ComboBox x:Name="FilterCb"  SelectedIndex="0" Margin="5" Width="100" Height="30" SelectionChanged="FilterCb_SelectionChanged" >

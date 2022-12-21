@@ -2,9 +2,9 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Cleaningg.Pages"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d" 
+       xmlns:database="clr-namespace:Cleaningg.Components"
        DataContext="{Binding RelativeSource={RelativeSource Self}}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ServicesListPage">
@@ -49,7 +49,7 @@
         </StackPanel>
         <ListView x:Name="ServiceList" Grid.Row="1"  d:ItemsSource="{d:SampleData ItemCount=3}" ItemsSource="{Binding ServicesList}" Margin="5">
             <ListView.ItemTemplate>
-                <DataTemplate >
+                <DataTemplate DataType="{x:Type database:Services}">
                     <Border BorderBrush="#FF7400AF" BorderThickness="2" >
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -70,7 +70,7 @@
                                 <TextBlock x:Name="DeadlineTb" Text="{Binding Deadline}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="5">
-                                <Button x:Name="CreateServBtn" Visibility="{Binding Path=BtnVisible}" Content="Редактировать" Margin="2" Click="CreateServBtn_Click"/>
+                                <Button x:Name="CreateServBtn" Content="Редактировать" Margin="2" Visibility="{Binding Path=BtnVisible}" Click="CreateServBtn_Click"/>
 
                             </StackPanel>
                         </Grid>

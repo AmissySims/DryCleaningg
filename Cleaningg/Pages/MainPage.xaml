@@ -15,7 +15,7 @@
             <ColumnDefinition Width="23*"/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\user\source\repos\Cleaning1\Cleaning1\Resources\Back.jpg" Stretch="Fill" TileMode="None"/>
+            <ImageBrush ImageSource="\Resources\Back.jpg" Stretch="Fill" TileMode="None"/>
 
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -45,7 +45,7 @@
             <TextBlock x:Name="TitlePage" Text="Химчистка"/>
 
         </StackPanel>
-        <Image Source="C:\Users\user\source\repos\Cleaning1\Cleaning1\Resources\лого.png" 
+        <Image Source="\Resources\logo.png" 
                Width="auto" Height="auto" Grid.RowSpan="2" VerticalAlignment="Top" />
         <Button x:Name="EntrBtn" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Выход"  Width="auto" Height="auto" Margin="5" Click="EntrBtn_Click"/>
         <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Stretch">

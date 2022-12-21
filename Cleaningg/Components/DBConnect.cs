@@ -14,6 +14,7 @@ namespace Cleaningg.Components
         {
             db = new DryCleaningEntities();
             db.User.Load();
+            db.Services.Load();
         }
     }
 }

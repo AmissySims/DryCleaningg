@@ -79,10 +79,10 @@ namespace Cleaningg.Pages
                         serviceList = DBConnect.db.Services.Local;
                         break;
                     case "2":
-                        serviceList = new ObservableCollection<Services>(ServicesList.OrderBy(x => x.Deadline));
+                        serviceList = new ObservableCollection<Services>(ServicesList.OrderByDescending(x => x.Deadline));
                         break;
                     case "3":
-                        serviceList = new ObservableCollection<Services>(ServicesList.OrderByDescending(x => x.Deadline));
+                        serviceList = new ObservableCollection<Services>(ServicesList.OrderBy(x => x.Deadline));
                         break;
                     default:
                         break;

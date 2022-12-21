@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Cleaningg.Pages"
+      xmlns:database="clr-namespace:Cleaningg.Components"
       mc:Ignorable="d" 
        DataContext="{Binding RelativeSource={RelativeSource Self}}"
       d:DesignHeight="450" d:DesignWidth="800"
@@ -48,7 +49,7 @@
         </StackPanel>
         <ListView x:Name="DetergentList" Grid.Row="1"  d:ItemsSource="{d:SampleData ItemCount=3}" ItemsSource="{Binding Detergents}" Margin="5">
             <ListView.ItemTemplate>
-                <DataTemplate >
+                <DataTemplate DataType="{x:Type database:Detergent}">
                     <Border BorderBrush="#FF7400AF" BorderThickness="2" >
                         <Grid>
                             <Grid.ColumnDefinitions>

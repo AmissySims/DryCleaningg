@@ -94,7 +94,10 @@ namespace Cleaningg.Pages
             DBConnect.db.Order.Local.Add(Order);
             DBConnect.db.SaveChanges();
             MessageBox.Show("save");
-            NavigationService.Navigate(new AllOrdersPage());
+            if (Navigation.AuthUser.RoleId == 2)
+                NavigationService.Navigate(new ServicesListPage());
+            else
+                NavigationService.Navigate(new AllOrdersPage());
 
 
         }

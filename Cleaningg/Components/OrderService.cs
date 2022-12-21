@@ -20,5 +20,6 @@ namespace Cleaningg.Components
     
         public virtual Order Order { get; set; }
         public virtual Services Services { get; set; }
+        public int? Cost { get; internal set; }
     }
 }

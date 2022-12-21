@@ -50,7 +50,7 @@ namespace Cleaningg.Pages
 
                 else
                 {
-                    Navigation.AuthUser = DBConnect.db.User.ToList().Find(x => x.Login == login && x.Password == password);
+                    Navigation.AuthUser = DBConnect.db.User.Local.ToList().Find(x => x.Login == login && x.Password == password);
                     if (Navigation.AuthUser == null)
                     {
                         MessageBox.Show("Такого пользователя нет");

@@ -30,8 +30,8 @@ namespace Cleaningg.Pages
         public ObservableCollection<OrderStatus> OrderStatus { get; set; }
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<Services> Services { get; set; }
-        public IEnumerable<User> Customers = DBConnect.db.User.Local.Where(user => user.RoleId == 2);
-        public IEnumerable<User> Executors = DBConnect.db.User.Local.Where(user => user.RoleId == 3);
+        public IEnumerable<User> Customers { get; set; } = DBConnect.db.User.Local.Where(user => user.RoleId == 2);
+        public IEnumerable<User> Executors { get; set; } = DBConnect.db.User.Local.Where(user => user.RoleId == 3);
         public IEnumerable<OrderService> OrderServices => Order.OrderService;
 
 
@@ -114,8 +114,10 @@ namespace Cleaningg.Pages
                         QuanityThings = 1,
 
                     });
-                    OnPropertyChanged(nameof(OrderService));
+                    
                 }
+                OnPropertyChanged(nameof(OrderService));
+                ServiceList.Items.Refresh();
             }
         }
 
@@ -128,6 +130,7 @@ namespace Cleaningg.Pages
                 DBConnect.db.OrderService.Local.Remove(orderService);
             DBConnect.db.SaveChanges();
             OnPropertyChanged(nameof(OrderService));
+            ServiceList.Items.Refresh();
         }
 
 

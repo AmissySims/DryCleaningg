@@ -65,6 +65,7 @@
                             <TextBlock x:Name="TitleTb" Text="{Binding Title}" Grid.Column="1" Margin="5"/>
                             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Margin="5">
                                 <TextBlock x:Name="CostTb" Text="{Binding Cost}"/>
+                                <TextBlock Text="Срок выполнения в днях: "/>
                                 <TextBlock x:Name="DeadlineTb" Text="{Binding Deadline}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="5">

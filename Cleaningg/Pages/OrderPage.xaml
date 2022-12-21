@@ -43,7 +43,8 @@
                             <TextBlock Text="Исполнитель" Margin="5"  />
 
                             <ComboBox ItemsSource="{Binding Executors}" 
-                                      SelectedItem="{Binding Order.User1}" Width="100"/>
+                                      SelectedItem="{Binding Order.User1}" Width="100"
+                                      DisplayMemberPath="FirstName"/>
 
 
 

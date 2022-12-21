@@ -16,6 +16,13 @@ namespace Cleaningg.Components.PartialClasses
                 return new ObservableCollection<OrderService>(OrdersService);
             }
         }
+        public ObservableCollection<Services> Services
+        {
+            get
+            {
+                return new ObservableCollection<Services>(Services);
+            }
+        }
         public int? Quanity
         {
             get

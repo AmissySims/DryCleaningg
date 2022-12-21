@@ -19,5 +19,12 @@ namespace Cleaningg.Components.PartialClasses
                     return Visibility.Visible;
             }
         }
+        public decimal? Cost
+        {
+            get
+            {
+                return this.Cost;
+            }
+        }
     }
 }

@@ -66,6 +66,7 @@
                                             <StackPanel>
                                                 <TextBlock Text="{Binding Services.Title}"/>
                                                 <TextBlock Text="{Binding QuanityThings}"/>
+                                                
                                                
                                             </StackPanel>
                                         </Border>
@@ -75,7 +76,6 @@
                             <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
                                 <StackPanel Orientation="Horizontal" >
                                     <TextBlock  Text="{Binding TotalCost, StringFormat='{} Общая сумма: {0:f} руб.'}"/>
-                                   
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <Button x:Name="CreateOrderBtn" Content="Редактировать"

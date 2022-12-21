@@ -28,11 +28,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StatusId" Type="int" Nullable="false" />
-          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="StatusId" Type="int" />
+          <Property Name="UserId" Type="int" />
           <Property Name="CompletionDate" Type="date" />
-          <Property Name="UserExecutorId" Type="int" Nullable="false" />
-          <Property Name="TotalCost" Type="money" />
+          <Property Name="UserExecutorId" Type="int" />
         </EntityType>
         <EntityType Name="OrderService">
           <Key>
@@ -113,7 +112,7 @@
           <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Order_OrderStatus">
-          <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="1" />
+          <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="0..1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OrderStatus">
@@ -125,7 +124,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
@@ -137,7 +136,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_User1">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
@@ -368,11 +367,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StatusId" Type="Int32" Nullable="false" />
-          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="StatusId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
           <Property Name="CompletionDate" Type="DateTime" Precision="0" />
-          <Property Name="UserExecutorId" Type="Int32" Nullable="false" />
-          <Property Name="TotalCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="UserExecutorId" Type="Int32" />
           <NavigationProperty Name="OrderStatus" Relationship="DryCleaningModel.FK_Order_OrderStatus" FromRole="Order" ToRole="OrderStatus" />
           <NavigationProperty Name="User" Relationship="DryCleaningModel.FK_Order_User" FromRole="Order" ToRole="User" />
           <NavigationProperty Name="User1" Relationship="DryCleaningModel.FK_Order_User1" FromRole="Order" ToRole="User" />
@@ -506,7 +504,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_OrderStatus">
-          <End Type="DryCleaningModel.OrderStatus" Role="OrderStatus" Multiplicity="1" />
+          <End Type="DryCleaningModel.OrderStatus" Role="OrderStatus" Multiplicity="0..1" />
           <End Type="DryCleaningModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OrderStatus">
@@ -518,7 +516,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_User">
-          <End Type="DryCleaningModel.User" Role="User" Multiplicity="1" />
+          <End Type="DryCleaningModel.User" Role="User" Multiplicity="0..1" />
           <End Type="DryCleaningModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
@@ -530,7 +528,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_User1">
-          <End Type="DryCleaningModel.User" Role="User" Multiplicity="1" />
+          <End Type="DryCleaningModel.User" Role="User" Multiplicity="0..1" />
           <End Type="DryCleaningModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
@@ -589,7 +587,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -618,7 +616,6 @@
           <EntitySetMapping Name="Order">
             <EntityTypeMapping TypeName="DryCleaningModel.Order">
               <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
                 <ScalarProperty Name="UserExecutorId" ColumnName="UserExecutorId" />
                 <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />

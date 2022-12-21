@@ -89,9 +89,12 @@ namespace Cleaningg.Pages
             Refresh();
         }
 
-        private void AddOrderBtn_Click(object sender, object e)
-        {
+        
 
+        private void AddOrderBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            var selorder = (sender as Button).DataContext as Order;
+            NavigationService.Navigate(new OrderPage(selorder));
         }
     }
 }

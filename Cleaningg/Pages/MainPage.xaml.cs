@@ -30,6 +30,7 @@ namespace Cleaningg.Pages
                 SupplyBtn.Visibility = Visibility.Collapsed;
                 OrdersBtn.Visibility = Visibility.Collapsed;
                 DetergentBtn.Visibility = Visibility.Collapsed;
+                UsersBtn.Visibility = Visibility.Collapsed;
 
 
             }
@@ -37,7 +38,7 @@ namespace Cleaningg.Pages
             {
                 SupplyBtn.Visibility = Visibility.Collapsed;
                 DetergentBtn.Visibility = Visibility.Collapsed;
-
+                UsersBtn.Visibility = Visibility.Collapsed; 
 
 
 

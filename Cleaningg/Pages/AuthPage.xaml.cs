@@ -81,7 +81,7 @@ namespace Cleaningg.Pages
             }
             else
             {
-                MessageBox.Show("Данные неверныю. Доступ заблокирован на 1 минуту!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Данные неверны. Доступ заблокирован на 1 минуту!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 TimeAuth = 0;
                 EntrBtn.IsEnabled = false;
                 RegBtn.IsEnabled = false;

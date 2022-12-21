@@ -35,18 +35,22 @@ namespace Cleaningg.Pages
             string phone = PhoneTb.Text.Trim();
             string adress = AdressTb.Text.Trim();
             char[] chars = { '!', '@', '#', '$', '%', '^' };
-            var check = DBConnect.db.User.Where(x => x.Login == login && x.Phone == phone).FirstOrDefault();
-            if (login.Length == 0 || password.Length == 0 ||
-                fname.Length == 0 || lname.Length == 0 ||
-                patronymic.Length == 0 || adress.Length == 0 ||
-                phone.Length == 0 || GenderCb.SelectedItem == null)
-            {
-                MessageBox.Show("Заполните поля");
-            }
+            var check = DBConnect.db.User.Where(x => x.Login == login).FirstOrDefault();
+            //if(login.Length == 0 || password.Length == 0 || 
+            //    fname.Length == 0 || lname.Length == 0 ||
+            //    patronymic.Length == 0 || adress.Length == 0 ||
+            //    phone.Length == 0 || GenderCb.SelectedItem == null) 
+            //{
+            //    MessageBox.Show("Заполните поля");
+            //}
 
-            else
+            //else
+            //{
+            if (login.Length > 0 && password.Length > 0 && fname.Length > 0 
+                && lname.Length > 0 
+                && patronymic.Length > 0 && adress.Length > 0 &&
+                phone.Length > 0 && GenderCb.SelectedItem != null)
             {
-
                 if (check == null)
                 {
                     if (password.Length > 5
@@ -54,6 +58,7 @@ namespace Cleaningg.Pages
                     && password.Any(ch => Char.IsDigit(ch))
                     && password.Any(ch => chars.Contains(ch)))
                     {
+
 
                         DBConnect.db.User.Add(new User
                         {
@@ -83,12 +88,17 @@ namespace Cleaningg.Pages
                 else
                     MessageBox.Show("Такой пользователь уже существует");
             }
+            else
+                MessageBox.Show("Заполните поля");
+
         }
-
-
         private void EntrBtn_Click(object sender, RoutedEventArgs e)
         {
             Navigation.NextPage(new Nav(new AuthPage()));
         }
+
     }
 }
+
+
+       

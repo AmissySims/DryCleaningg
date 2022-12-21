@@ -9,7 +9,7 @@ namespace Cleaningg.Components
 {
     internal class DBConnect
     {
-        public static DryCleaningEntities db;
+        public static DryCleaningEntities db = new DryCleaningEntities();
         static DBConnect()
         {
             db = new DryCleaningEntities();

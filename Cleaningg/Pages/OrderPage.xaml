@@ -52,7 +52,13 @@
                             <TextBlock Text="Заказчик" Margin="5"  />
 
                             <ComboBox ItemsSource="{Binding Customers}"
-                                      SelectedItem="{Binding Order.User}" Width="100"/>
+                                      SelectedItem="{Binding Order.User}" Width="100">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <ComboBoxItem Tag="{Binding FirstName}" Content="{Binding FirstName}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
 
 

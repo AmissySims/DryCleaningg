@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cleaningg.Windows"
+         xmlns:database="clr-namespace:Cleaningg.Components"
         mc:Ignorable="d"
         Title="SelectServiceWindow" Height="140" Width="118"
         SizeToContent="WidthAndHeight"
@@ -15,7 +16,7 @@
         <StackPanel Orientation="Vertical">
             <ListBox Name="ServiceList" ItemsSource="{Binding Services}" SelectionMode="Multiple" d:ItemsSource="{d:SampleData ItemCount=5}">
                 <ListBox.ItemTemplate>
-                    <DataTemplate >
+                    <DataTemplate  DataType="{x:Type database:Services}">
                         <TextBlock Text="{Binding Title}"/>
 
                     </DataTemplate>

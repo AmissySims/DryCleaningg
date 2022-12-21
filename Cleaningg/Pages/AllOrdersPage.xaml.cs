@@ -36,6 +36,7 @@ namespace Cleaningg.Pages
         {
             DBConnect.db.Order.Load();
             AllOrders = DBConnect.db.Order.Local;
+            decimal TotalCost = 
             InitializeComponent();
         }
         private void CreateOrderBtn_Click(object sender, RoutedEventArgs e)

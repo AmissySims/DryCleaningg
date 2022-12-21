@@ -29,7 +29,8 @@
                 <TextBlock Text="Сортировка" Margin="5"/>
                 <ComboBox x:Name="SortCb" Margin="5" Width="100" Height="30" SelectedIndex="0" SelectionChanged="SortCb_SelectionChanged">
                     <ComboBoxItem  Tag="1" Content="Все"/>
-                    <ComboBoxItem Tag="2" Content="Время выполнения"/>
+                    <ComboBoxItem Tag="2" Content="Сроки выполнения по убыванию"/>
+                    <ComboBoxItem Tag="3" Content="Сроки выполнения по возрастанию"/>
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >

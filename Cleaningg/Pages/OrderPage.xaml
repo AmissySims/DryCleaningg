@@ -43,7 +43,7 @@
                             <TextBlock Text="Исполнитель" Margin="5"  />
 
                             <ComboBox ItemsSource="{Binding Executors}" 
-                                      SelectedItem="{Binding Order.User1.FirstName}" Width="100"/>
+                                      SelectedItem="{Binding Order.User1}" Width="100"/>
 
 
 
@@ -52,7 +52,7 @@
                             <TextBlock Text="Заказчик" Margin="5"  />
 
                             <ComboBox ItemsSource="{Binding Customers}"
-                                      SelectedItem="{Binding Order.User.FirstName}" Width="100"/>
+                                      SelectedItem="{Binding Order.User}" Width="100"/>
 
 
 
@@ -91,8 +91,7 @@
                             </StackPanel>
                             <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
                                 <StackPanel Orientation="Horizontal" >
-                                    <TextBlock Text="Цена"/>
-                                    <TextBlock Margin="10 0" x:Name="PPTb" Text="{Binding TotalCost}"/>
+                                   
                                     <TextBlock Text="Количество вещей"></TextBlock>
                                     <TextBox Margin="10 0" x:Name="QuTb" Text="{Binding QuanityThings}" />
                                 </StackPanel>

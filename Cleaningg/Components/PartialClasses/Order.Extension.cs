@@ -30,12 +30,7 @@ namespace Cleaningg.Components.PartialClasses
                 return this.OrdersService.Sum(x => x.QuanityThings * x.Services.Cost);
             }
         }
-        //public decimal? TotalSum
-        //{
-        //    get
-        //    {
-        //        return this.OrderServices.Sum(x => x.QuanityThings * x.Services.Cost);
-        //    }
-        //}
+      
+       
     }
 }

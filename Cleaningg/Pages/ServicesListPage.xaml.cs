@@ -47,7 +47,13 @@ namespace Cleaningg.Pages
             {
                 AddServBtn.Visibility = Visibility.Collapsed;
             }
-            GeneralCount.Text = DBConnect.db.Services.Count().ToString();
+          
+
+            if (Navigation.AuthUser.RoleId == 3)
+            {
+                AddServBtn.Visibility = Visibility.Collapsed;
+            }
+            GeneralCount.Text = DBConnect.db.Services.Local.Count().ToString();
         }
 
         private void CreateServBtn_Click(object sender, RoutedEventArgs e)

@@ -37,7 +37,7 @@ namespace Cleaningg.Pages
             if (Navigation.AuthUser.RoleId == 3)
             {
                 SupplyBtn.Visibility = Visibility.Collapsed;
-                DetergentBtn.Visibility = Visibility.Collapsed;
+               
                 UsersBtn.Visibility = Visibility.Collapsed; 
 
 

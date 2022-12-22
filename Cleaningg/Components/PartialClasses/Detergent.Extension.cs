@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
 
-namespace Cleaningg.Components.PartialClasses
+namespace Cleaningg.Components
 {
     public partial class Detergent
     {
@@ -13,10 +9,10 @@ namespace Cleaningg.Components.PartialClasses
         {
             get
             {
-                if (Navigation.AuthUser.RoleId == 3)
-                    return Visibility.Collapsed;
-                else
+                if (Navigation.AuthUser.RoleId == 1)
                     return Visibility.Visible;
+                else
+                    return Visibility.Collapsed;
             }
         }
     }

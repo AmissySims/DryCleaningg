@@ -43,6 +43,7 @@ namespace Cleaningg.Pages
 
                 AddDetBtn.Visibility = Visibility.Collapsed;
             }
+            
             GeneralCount.Text = DBConnect.db.Detergent.Local.Count.ToString();
         }
 

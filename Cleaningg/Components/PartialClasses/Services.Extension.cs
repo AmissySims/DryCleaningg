@@ -1,7 +1,7 @@
 ﻿
 using System.Windows;
 
-namespace Cleaningg.Components.PartialClasses
+namespace Cleaningg.Components
 {
     public partial class Services
     {
@@ -9,10 +9,11 @@ namespace Cleaningg.Components.PartialClasses
         {
             get
             {
-                if (Navigation.AuthUser.RoleId == 2)
-                    return Visibility.Collapsed;
-                else
+                if (Navigation.AuthUser.RoleId == 1)
                     return Visibility.Visible;
+                else
+                    return Visibility.Collapsed;
+               
             }
         }
         

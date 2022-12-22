@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b2bc1b3d9ded4983a47273e6ee952009" Name="Diagram1" ZoomLevel="64">
+      <Diagram DiagramId="b2bc1b3d9ded4983a47273e6ee952009" Name="Diagram1" ZoomLevel="83">
         <EntityTypeShape EntityType="DryCleaningModel.Detergent" Width="1.5" PointX="3" PointY="8.625" />
         <EntityTypeShape EntityType="DryCleaningModel.Gender" Width="1.5" PointX="0.75" PointY="6.125" />
         <EntityTypeShape EntityType="DryCleaningModel.Order" Width="1.5" PointX="5.25" PointY="1.5" />

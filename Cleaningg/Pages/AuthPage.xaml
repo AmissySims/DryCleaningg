@@ -10,10 +10,10 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\user\source\repos\Cleaning1\Cleaning1\Resources\Back.jpg" Stretch="Fill" TileMode="None"/>
+            <ImageBrush ImageSource="\Resources\Back.jpg" Stretch="Fill" TileMode="None"/>
 
         </Grid.Background>
-        <Image Source="C:\Users\user\source\repos\Cleaning1\Cleaning1\Resources\лого.png" Opacity="0.15"/>
+        <Image Source="\Resources\logo.png" Opacity="0.15"/>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="Логин" Margin="5"/>
